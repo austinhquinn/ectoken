@@ -119,7 +119,7 @@ PHP_FUNCTION(ectoken_decrypt_token)
                 efree(plaintext);
                 RETURN_NULL();
         }
-        RETVAL_STRINGL(plaintext, plaintext_length, 0);
+        RETVAL_STRINGL(plaintext, plaintext_length);
 
 }
 
@@ -151,7 +151,7 @@ PHP_FUNCTION(ectoken_encrypt_token)
                 efree(ciphertext);
                 RETURN_NULL();
         }
-        RETVAL_STRINGL(ciphertext, ciphertext_length, 0);
+        RETVAL_STRINGL(ciphertext, ciphertext_length);
 }
 
 PHP_FUNCTION(ectoken_generate){
@@ -263,7 +263,7 @@ PHP_FUNCTION(ectoken_generate){
                 efree(strippedstr);
         }
         if (result != NULL){
-                RETVAL_STRINGL(result, strlen(result), 1);
+                RETVAL_STRINGL(result, strlen(result));
                 efree(result);
         }
 }
